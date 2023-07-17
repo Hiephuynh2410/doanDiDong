@@ -49,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
         editPass = findViewById(R.id.txtPassword);
         btnsignin = findViewById(R.id.btnSignIn);
         twSignUp = findViewById(R.id.signup);
+        twSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RegisterPage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                .requestIdToken(getString(R.string.default_web_client_id))
